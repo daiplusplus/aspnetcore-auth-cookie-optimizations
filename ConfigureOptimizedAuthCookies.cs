@@ -27,19 +27,19 @@ namespace Jehoel
 	}
 
 	public class OptimizedPostConfigureCookieAuthenticationOptions : IPostConfigureOptions<CookieAuthenticationOptions>
-    {
-        private readonly IDataProtectionProvider dp;
+	{
+		private readonly IDataProtectionProvider dp;
 		private readonly ILoggerFactory          loggerFactory;
 
 		// These strings are absolutely required:
 		private const String _LegacyPurpose1 = "Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationMiddleware";
 		private const String _LegacyPurpose2 = "v2";
 
-        public OptimizedPostConfigureCookieAuthenticationOptions(IDataProtectionProvider dataProtection, ILoggerFactory loggerFactory)
-        {
-            this.dp            = dataProtection ?? throw new ArgumentNullException( nameof(dataProtection) );
+		public OptimizedPostConfigureCookieAuthenticationOptions(IDataProtectionProvider dataProtection, ILoggerFactory loggerFactory)
+		{
+			this.dp            = dataProtection ?? throw new ArgumentNullException( nameof(dataProtection) );
 			this.loggerFactory = loggerFactory  ?? throw new ArgumentNullException( nameof(loggerFactory) );
-        }
+		}
 
 		public void PostConfigure( String name, CookieAuthenticationOptions options )
 		{

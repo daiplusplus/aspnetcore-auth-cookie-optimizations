@@ -38,14 +38,14 @@ namespace Jehoel
 			// If it's Base64-encoded only once (during final output) then that's 1,366 vs 1,821 (455 bytes saved: 33%).
 
 			writer.Write( (Byte)OptimizedTicketDataFormat.FormatVersion );
-            writer.Write( (Int16)properties.Items.Count );
-
-            foreach( KeyValuePair<String,String> item in properties.Items )
-            {
-                writer.Write( item.Key ?? String.Empty );
-
+			writer.Write( (Int16)properties.Items.Count );
+			
+			foreach( KeyValuePair<String,String> item in properties.Items )
+			{
+				writer.Write( item.Key ?? String.Empty );
+			
 				writer.WriteString2( item.Value ?? String.Empty );
-            }
+			}
 		}
 
 		
