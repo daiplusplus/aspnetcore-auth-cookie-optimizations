@@ -26,7 +26,7 @@ Why?
 
 * This library **optionally** uses Deflate compression to compress values in the authentication ticket and authentication cookie.
 * The data is encrypted *after* the data is compressed.
-* **Encrypting data after the same data is compressed MAY introduce a security vulnerability!**
+* However, **encrypting data after the same data is compressed WILL introduce a security vulnerability that defeats the purpose of the encryption in the first place!**
     
   1. Authentication tickets may contain user-provided data (e.g. the  - and they can also contain data which is meant to be kept a secret from the end-user.
       * An example of user-provided data is a user-provided email-address for the email `Claim`.
