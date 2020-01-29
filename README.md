@@ -1,5 +1,9 @@
 # aspnetcore-auth-cookie-optimizations
 
+## Security Warning!!!
+
+This library may be very inappropriate for your application. Please read the "Security Notes" section below!
+
 ## What is this?
 
 * For background, please read this thread: https://github.com/dotnet/aspnetcore/issues/10951
@@ -12,7 +16,7 @@
   * If you're storing many `Claim` values (more than 5 or 6 or so) and/or are including or embedding JWT tokens (such as OAuth2 or OIDC's `id_token` or `access_token`) inside the ticket / cookie then you might find this library useful.
 * Please read the security warning below!
 
-## Security Warning!
+## Security Notes
 
 *PLEASE DO NOT USE THE (DEFLATE) COMPRESSION FEATURE OF THIS LIBRARY IN HIGH-SECURITY APPLICATIONS!*
 
