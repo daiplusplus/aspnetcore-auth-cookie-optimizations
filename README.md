@@ -56,7 +56,7 @@ This library offers a few options for improving authentication ticket and authen
 * `Claim` names and types are interned.
     * i.e. well-known and common `Claim` names and types are represented by a 1-byte integer instead of their full string representations.
     * This is a huge saver when using `Claim` instances with non-`String` values (e.g. `Integer`) because otherwise ASP.NET Core writes the full SOAP-WS Claim name and SOAP claim data type name to the serialized ticket.
-       * e.g. it will write `http://schemas.xmlsoap.org/ws/2009/09/identity/claims/actor` and ``
+       * e.g. it will write `"http://schemas.xmlsoap.org/ws/2009/09/identity/claims/actor"` instead of just `"actor"`.
        * I'm surprised that in 2019 that ASP.NET Core continues to use old-fashioned SOAP-WS claim strings as through it's the mid-2000s in a clunky "Enterprise" system instead of much shorter JWT claim names.
 
 * Preventing double-encoding of Base64 values, including JWTs (which are dot-separated Base64 strings).
